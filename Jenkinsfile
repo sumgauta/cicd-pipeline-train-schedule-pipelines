@@ -1,19 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('Build') {
+    stage('Checkout') {
       steps {
-         build steps
-      }
-    }
-    stage('Test') {
-      steps { 
-         test steps  
-      }
-    }
-    stage('Deploy') {
-      steps {
-         deploy steps
+        git 'https://github.com/sumgauta/cicd-pipeline-train-schedule-pipelines.git'
       }
     }
   }
