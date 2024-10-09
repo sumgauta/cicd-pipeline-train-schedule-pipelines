@@ -1,10 +1,12 @@
 pipeline {
   agent any
-  stages {
-    stage('Checkout') {
+  stages{
+    stage ('Build') {
       steps {
-        git 'https://github.com/sumgauta/cicd-pipeline-train-schedule-pipelines.git'
+        echo 'Running Build Automation'
+        sh './gradlew build --no-daemon'
+        archiveArtifacts artifacts: 'dist/trainSchedule.zip artifact'
       }
-    }
+    } 
   }
 }
