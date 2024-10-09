@@ -3,17 +3,17 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        // build steps
+         build steps
       }
     }
     stage('Test') {
       steps { 
-        // test steps  
+         test steps  
       }
     }
     stage('Deploy') {
       steps {
-        // deploy steps
+         deploy steps
       }
     }
   }
